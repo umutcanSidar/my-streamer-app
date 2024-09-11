@@ -2960,7 +2960,7 @@ const container = document.getElementById("root");
 const root = (0, _client.createRoot)(container);
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appDefault.default), {}, void 0, false, {
     fileName: "frontend/src/index.js",
-    lineNumber: 7,
+    lineNumber: 6,
     columnNumber: 13
 }, undefined));
 
@@ -34489,14 +34489,6 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
                     lineNumber: 37,
                     columnNumber: 18
                 }, undefined)
-            },
-            {
-                path: "dashboard",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dashBoardPageDefault.default), {}, void 0, false, {
-                    fileName: "frontend/src/helpers/router.js",
-                    lineNumber: 41,
-                    columnNumber: 18
-                }, undefined)
             }
         ]
     }
@@ -34507,7 +34499,7 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../layouts/RootLayout":"iEroZ","../layouts/AdminLayout":"2ucVr","../pages/LoginPage":"aA2F2","../pages/HomePage":"Eij1b","../pages/admin/DashBoardPage":"9etoY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../layouts/ProtectedRoute":"3cUkV"}],"iEroZ":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../layouts/RootLayout":"iEroZ","../layouts/AdminLayout":"2ucVr","../pages/HomePage":"Eij1b","../layouts/ProtectedRoute":"3cUkV","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../pages/LoginPage":"aA2F2","../pages/admin/DashBoardPage":"9etoY"}],"iEroZ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$be59 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34713,11 +34705,46 @@ $RefreshReg$(_c, "AdminLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aA2F2":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$562a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"Eij1b":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$db4a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$562a.prelude(module);
+$parcel$ReactRefreshHelpers$db4a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const HomePage = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            children: "Ana sayfa"
+        }, void 0, false, {
+            fileName: "frontend/src/pages/HomePage.js",
+            lineNumber: 4,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "frontend/src/pages/HomePage.js",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = HomePage;
+exports.default = HomePage;
+var _c;
+$RefreshReg$(_c, "HomePage");
+
+  $parcel$ReactRefreshHelpers$db4a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3cUkV":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$bc71 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$bc71.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -34725,130 +34752,48 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRedux = require("react-redux");
-var _authSlice = require("../slices/AuthSlice");
-var _form = require("../components/Form/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
 var _reactRouterDom = require("react-router-dom");
+var _authSlice = require("../slices/AuthSlice");
 var _s = $RefreshSig$();
-const LoginPage = ()=>{
+const ProtectedRoute = ({ children })=>{
     _s();
-    const [userInfo, setUserInfo] = (0, _react.useState)();
+    const { error } = (0, _reactRedux.useSelector)((state)=>state.auth);
     const dispatch = (0, _reactRedux.useDispatch)();
-    const { user } = (0, _reactRedux.useSelector)((state)=>state.auth);
     const navigate = (0, _reactRouterDom.useNavigate)();
-    const onHandleChanged = (event)=>{
-        setUserInfo({
-            ...userInfo,
-            [event.target.name]: event.target.value
-        });
-    };
-    const onHandleSubmitted = (event)=>{
-        event.preventDefault();
-        dispatch((0, _authSlice.login)(userInfo));
-    };
     (0, _react.useEffect)(()=>{
-        localStorage.getItem("token") && navigate("/admin");
+        !localStorage.getItem("token") && navigate("/login");
+        dispatch((0, _authSlice.verifyToken)());
     }, [
-        user
+        dispatch,
+        navigate
     ]);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
-            onChange: onHandleChanged,
-            onSubmit: onHandleSubmitted
-        }, void 0, false, {
-            fileName: "frontend/src/pages/LoginPage.js",
-            lineNumber: 29,
-            columnNumber: 7
-        }, undefined)
+    if (error) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+        to: "/login"
     }, void 0, false, {
-        fileName: "frontend/src/pages/LoginPage.js",
-        lineNumber: 28,
-        columnNumber: 5
+        fileName: "frontend/src/layouts/ProtectedRoute.js",
+        lineNumber: 16,
+        columnNumber: 21
     }, undefined);
+    return children;
 };
-_s(LoginPage, "xcfCOexfvCNtJ+eg0TZv+rQQNw4=", false, function() {
+_s(ProtectedRoute, "c5BjylWxyjefsu9KdMTxlBcugvM=", false, function() {
     return [
-        (0, _reactRedux.useDispatch),
         (0, _reactRedux.useSelector),
+        (0, _reactRedux.useDispatch),
         (0, _reactRouterDom.useNavigate)
     ];
 });
-_c = LoginPage;
-exports.default = LoginPage;
+_c = ProtectedRoute;
+exports.default = ProtectedRoute;
 var _c;
-$RefreshReg$(_c, "LoginPage");
+$RefreshReg$(_c, "ProtectedRoute");
 
-  $parcel$ReactRefreshHelpers$562a.postlude(module);
+  $parcel$ReactRefreshHelpers$bc71.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../components/Form/Form":"jbmyq","react":"21dqq","react-redux":"62sf7","../slices/AuthSlice":"bKENh","react-router-dom":"9xmpe"}],"jbmyq":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8e09 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8e09.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Form = ({ onChange, onSubmit })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-            onSubmit: (e)=>onSubmit(e),
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                    name: "email",
-                    id: "email",
-                    type: "email",
-                    onChange: (e)=>onChange(e)
-                }, void 0, false, {
-                    fileName: "frontend/src/components/Form/Form.js",
-                    lineNumber: 5,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                    name: "password",
-                    id: "password",
-                    type: "password",
-                    onChange: (e)=>onChange(e)
-                }, void 0, false, {
-                    fileName: "frontend/src/components/Form/Form.js",
-                    lineNumber: 11,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                    type: "submit",
-                    value: "G\xf6nder"
-                }, void 0, false, {
-                    fileName: "frontend/src/components/Form/Form.js",
-                    lineNumber: 17,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "frontend/src/components/Form/Form.js",
-            lineNumber: 4,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "frontend/src/components/Form/Form.js",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Form;
-exports.default = Form;
-var _c;
-$RefreshReg$(_c, "Form");
-
-  $parcel$ReactRefreshHelpers$8e09.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"62sf7":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"62sf7","react-router-dom":"9xmpe","../slices/AuthSlice":"bKENh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"62sf7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Provider", ()=>Provider_default);
@@ -36012,7 +35957,7 @@ const authSlice = (0, _toolkit.createSlice)({
 const { logout } = authSlice.actions;
 exports.default = authSlice.reducer;
 
-},{"@reduxjs/toolkit":"fuua8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","axios":"jo6P5"}],"fuua8":[function(require,module,exports) {
+},{"@reduxjs/toolkit":"fuua8","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fuua8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ReducerType", ()=>ReducerType);
@@ -40105,6 +40050,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _bindJs = require("./helpers/bind.js");
 var _bindJsDefault = parcelHelpers.interopDefault(_bindJs);
 var global = arguments[3];
+var process = require("a8d2c3349c87a903");
 "use strict";
 // utils is a library of generic helper functions non-specific to axios
 const { toString } = Object.prototype;
@@ -40603,6 +40549,22 @@ const toJSONObject = (obj)=>{
 };
 const isAsyncFn = kindOfTest("AsyncFunction");
 const isThenable = (thing)=>thing && (isObject(thing) || isFunction(thing)) && isFunction(thing.then) && isFunction(thing.catch);
+// original code
+// https://github.com/DigitalBrainJS/AxiosPromise/blob/16deab13710ec09779922131f3fa5954320f83ab/lib/utils.js#L11-L34
+const _setImmediate = ((setImmediateSupported, postMessageSupported)=>{
+    if (setImmediateSupported) return setImmediate;
+    return postMessageSupported ? ((token, callbacks)=>{
+        _global.addEventListener("message", ({ source, data })=>{
+            if (source === _global && data === token) callbacks.length && callbacks.shift()();
+        }, false);
+        return (cb)=>{
+            callbacks.push(cb);
+            _global.postMessage(token, "*");
+        };
+    })(`axios@${Math.random()}`, []) : (cb)=>setTimeout(cb);
+})(typeof setImmediate === "function", isFunction(_global.postMessage));
+const asap = typeof queueMicrotask !== "undefined" ? queueMicrotask.bind(_global) : typeof process !== "undefined" && process.nextTick || _setImmediate;
+// *********************
 exports.default = {
     isArray,
     isArrayBuffer,
@@ -40658,10 +40620,12 @@ exports.default = {
     isSpecCompliantForm,
     toJSONObject,
     isAsyncFn,
-    isThenable
+    isThenable,
+    setImmediate: _setImmediate,
+    asap
 };
 
-},{"./helpers/bind.js":"haRQb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"haRQb":[function(require,module,exports) {
+},{"a8d2c3349c87a903":"d5jf4","./helpers/bind.js":"haRQb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"haRQb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>bind);
@@ -42739,7 +42703,10 @@ var _utilsJsDefault = parcelHelpers.interopDefault(_utilsJs);
     code && (this.code = code);
     config && (this.config = config);
     request && (this.request = request);
-    response && (this.response = response);
+    if (response) {
+        this.response = response;
+        this.status = response.status ? response.status : null;
+    }
 }
 (0, _utilsJsDefault.default).inherits(AxiosError, Error, {
     toJSON: function toJSON() {
@@ -42758,7 +42725,7 @@ var _utilsJsDefault = parcelHelpers.interopDefault(_utilsJs);
             // Axios
             config: (0, _utilsJsDefault.default).toJSONObject(this.config),
             code: this.code,
-            status: this.response && this.response.status ? this.response.status : null
+            status: this.status
         };
     }
 });
@@ -43172,8 +43139,10 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "hasBrowserEnv", ()=>hasBrowserEnv);
 parcelHelpers.export(exports, "hasStandardBrowserWebWorkerEnv", ()=>hasStandardBrowserWebWorkerEnv);
 parcelHelpers.export(exports, "hasStandardBrowserEnv", ()=>hasStandardBrowserEnv);
+parcelHelpers.export(exports, "navigator", ()=>_navigator);
 parcelHelpers.export(exports, "origin", ()=>origin);
 const hasBrowserEnv = typeof window !== "undefined" && typeof document !== "undefined";
+const _navigator = typeof navigator === "object" && navigator || undefined;
 /**
  * Determine if we're running in a standard browser environment
  *
@@ -43190,13 +43159,11 @@ const hasBrowserEnv = typeof window !== "undefined" && typeof document !== "unde
  *  navigator.product -> 'NativeScript' or 'NS'
  *
  * @returns {boolean}
- */ const hasStandardBrowserEnv = ((product)=>{
-    return hasBrowserEnv && [
-        "ReactNative",
-        "NativeScript",
-        "NS"
-    ].indexOf(product) < 0;
-})(typeof navigator !== "undefined" && navigator.product);
+ */ const hasStandardBrowserEnv = hasBrowserEnv && (!_navigator || [
+    "ReactNative",
+    "NativeScript",
+    "NS"
+].indexOf(_navigator.product) < 0);
 /**
  * Determine if we're running in a standard browser webWorker environment
  *
@@ -43670,7 +43637,6 @@ var _indexJsDefault = parcelHelpers.interopDefault(_indexJs);
 var _axiosHeadersJs = require("../core/AxiosHeaders.js");
 var _axiosHeadersJsDefault = parcelHelpers.interopDefault(_axiosHeadersJs);
 var _progressEventReducerJs = require("../helpers/progressEventReducer.js");
-var _progressEventReducerJsDefault = parcelHelpers.interopDefault(_progressEventReducerJs);
 var _resolveConfigJs = require("../helpers/resolveConfig.js");
 var _resolveConfigJsDefault = parcelHelpers.interopDefault(_resolveConfigJs);
 const isXHRAdapterSupported = typeof XMLHttpRequest !== "undefined";
@@ -43679,11 +43645,15 @@ exports.default = isXHRAdapterSupported && function(config) {
         const _config = (0, _resolveConfigJsDefault.default)(config);
         let requestData = _config.data;
         const requestHeaders = (0, _axiosHeadersJsDefault.default).from(_config.headers).normalize();
-        let { responseType } = _config;
+        let { responseType, onUploadProgress, onDownloadProgress } = _config;
         let onCanceled;
+        let uploadThrottled, downloadThrottled;
+        let flushUpload, flushDownload;
         function done() {
-            if (_config.cancelToken) _config.cancelToken.unsubscribe(onCanceled);
-            if (_config.signal) _config.signal.removeEventListener("abort", onCanceled);
+            flushUpload && flushUpload(); // flush events
+            flushDownload && flushDownload(); // flush events
+            _config.cancelToken && _config.cancelToken.unsubscribe(onCanceled);
+            _config.signal && _config.signal.removeEventListener("abort", onCanceled);
         }
         let request = new XMLHttpRequest();
         request.open(_config.method.toUpperCase(), _config.url, true);
@@ -43729,7 +43699,7 @@ exports.default = isXHRAdapterSupported && function(config) {
         // Handle browser request cancellation (as opposed to a manual cancellation)
         request.onabort = function handleAbort() {
             if (!request) return;
-            reject(new (0, _axiosErrorJsDefault.default)("Request aborted", (0, _axiosErrorJsDefault.default).ECONNABORTED, _config, request));
+            reject(new (0, _axiosErrorJsDefault.default)("Request aborted", (0, _axiosErrorJsDefault.default).ECONNABORTED, config, request));
             // Clean up request
             request = null;
         };
@@ -43737,7 +43707,7 @@ exports.default = isXHRAdapterSupported && function(config) {
         request.onerror = function handleError() {
             // Real errors are hidden from us by the browser
             // onerror should only fire if it's a network error
-            reject(new (0, _axiosErrorJsDefault.default)("Network Error", (0, _axiosErrorJsDefault.default).ERR_NETWORK, _config, request));
+            reject(new (0, _axiosErrorJsDefault.default)("Network Error", (0, _axiosErrorJsDefault.default).ERR_NETWORK, config, request));
             // Clean up request
             request = null;
         };
@@ -43746,7 +43716,7 @@ exports.default = isXHRAdapterSupported && function(config) {
             let timeoutErrorMessage = _config.timeout ? "timeout of " + _config.timeout + "ms exceeded" : "timeout exceeded";
             const transitional = _config.transitional || (0, _transitionalJsDefault.default);
             if (_config.timeoutErrorMessage) timeoutErrorMessage = _config.timeoutErrorMessage;
-            reject(new (0, _axiosErrorJsDefault.default)(timeoutErrorMessage, transitional.clarifyTimeoutError ? (0, _axiosErrorJsDefault.default).ETIMEDOUT : (0, _axiosErrorJsDefault.default).ECONNABORTED, _config, request));
+            reject(new (0, _axiosErrorJsDefault.default)(timeoutErrorMessage, transitional.clarifyTimeoutError ? (0, _axiosErrorJsDefault.default).ETIMEDOUT : (0, _axiosErrorJsDefault.default).ECONNABORTED, config, request));
             // Clean up request
             request = null;
         };
@@ -43761,9 +43731,16 @@ exports.default = isXHRAdapterSupported && function(config) {
         // Add responseType to request if needed
         if (responseType && responseType !== "json") request.responseType = _config.responseType;
         // Handle progress if needed
-        if (typeof _config.onDownloadProgress === "function") request.addEventListener("progress", (0, _progressEventReducerJsDefault.default)(_config.onDownloadProgress, true));
+        if (onDownloadProgress) {
+            [downloadThrottled, flushDownload] = (0, _progressEventReducerJs.progressEventReducer)(onDownloadProgress, true);
+            request.addEventListener("progress", downloadThrottled);
+        }
         // Not all browsers support upload events
-        if (typeof _config.onUploadProgress === "function" && request.upload) request.upload.addEventListener("progress", (0, _progressEventReducerJsDefault.default)(_config.onUploadProgress));
+        if (onUploadProgress && request.upload) {
+            [uploadThrottled, flushUpload] = (0, _progressEventReducerJs.progressEventReducer)(onUploadProgress);
+            request.upload.addEventListener("progress", uploadThrottled);
+            request.upload.addEventListener("loadend", flushUpload);
+        }
         if (_config.cancelToken || _config.signal) {
             // Handle cancellation
             // eslint-disable-next-line func-names
@@ -43815,11 +43792,16 @@ function parseProtocol(url) {
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bN9Fp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "progressEventReducer", ()=>progressEventReducer);
+parcelHelpers.export(exports, "progressEventDecorator", ()=>progressEventDecorator);
+parcelHelpers.export(exports, "asyncDecorator", ()=>asyncDecorator);
 var _speedometerJs = require("./speedometer.js");
 var _speedometerJsDefault = parcelHelpers.interopDefault(_speedometerJs);
 var _throttleJs = require("./throttle.js");
 var _throttleJsDefault = parcelHelpers.interopDefault(_throttleJs);
-exports.default = (listener, isDownloadStream, freq = 3)=>{
+var _utilsJs = require("../utils.js");
+var _utilsJsDefault = parcelHelpers.interopDefault(_utilsJs);
+const progressEventReducer = (listener, isDownloadStream, freq = 3)=>{
     let bytesNotified = 0;
     const _speedometer = (0, _speedometerJsDefault.default)(50, 250);
     return (0, _throttleJsDefault.default)((e)=>{
@@ -43837,14 +43819,26 @@ exports.default = (listener, isDownloadStream, freq = 3)=>{
             rate: rate ? rate : undefined,
             estimated: rate && total && inRange ? (total - loaded) / rate : undefined,
             event: e,
-            lengthComputable: total != null
+            lengthComputable: total != null,
+            [isDownloadStream ? "download" : "upload"]: true
         };
-        data[isDownloadStream ? "download" : "upload"] = true;
         listener(data);
     }, freq);
 };
+const progressEventDecorator = (total, throttled)=>{
+    const lengthComputable = total != null;
+    return [
+        (loaded)=>throttled[0]({
+                lengthComputable,
+                total,
+                loaded
+            }),
+        throttled[1]
+    ];
+};
+const asyncDecorator = (fn)=>(...args)=>(0, _utilsJsDefault.default).asap(()=>fn(...args));
 
-},{"./speedometer.js":"gQeo1","./throttle.js":"6fmRS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gQeo1":[function(require,module,exports) {
+},{"./speedometer.js":"gQeo1","./throttle.js":"6fmRS","../utils.js":"5By4s","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gQeo1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 "use strict";
@@ -43883,35 +43877,44 @@ parcelHelpers.defineInteropFlag(exports);
 exports.default = speedometer;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6fmRS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-"use strict";
 /**
  * Throttle decorator
  * @param {Function} fn
  * @param {Number} freq
  * @return {Function}
- */ function throttle(fn, freq) {
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function throttle(fn, freq) {
     let timestamp = 0;
-    const threshold = 1000 / freq;
-    let timer = null;
-    return function throttled() {
-        const force = this === true;
-        const now = Date.now();
-        if (force || now - timestamp > threshold) {
-            if (timer) {
-                clearTimeout(timer);
-                timer = null;
-            }
-            timestamp = now;
-            return fn.apply(null, arguments);
-        }
-        if (!timer) timer = setTimeout(()=>{
+    let threshold = 1000 / freq;
+    let lastArgs;
+    let timer;
+    const invoke = (args, now = Date.now())=>{
+        timestamp = now;
+        lastArgs = null;
+        if (timer) {
+            clearTimeout(timer);
             timer = null;
-            timestamp = Date.now();
-            return fn.apply(null, arguments);
-        }, threshold - (now - timestamp));
+        }
+        fn.apply(null, args);
     };
+    const throttled = (...args)=>{
+        const now = Date.now();
+        const passed = now - timestamp;
+        if (passed >= threshold) invoke(args, now);
+        else {
+            lastArgs = args;
+            if (!timer) timer = setTimeout(()=>{
+                timer = null;
+                invoke(lastArgs);
+            }, threshold - passed);
+        }
+    };
+    const flush = ()=>lastArgs && invoke(lastArgs);
+    return [
+        throttled,
+        flush
+    ];
 }
 exports.default = throttle;
 
@@ -43978,7 +43981,7 @@ var _indexJsDefault = parcelHelpers.interopDefault(_indexJs);
 exports.default = (0, _indexJsDefault.default).hasStandardBrowserEnv ? // Standard browser envs have full support of the APIs needed to test
 // whether the request URL is of the same origin as current location.
 function standardBrowserEnv() {
-    const msie = /(msie|trident)/i.test(navigator.userAgent);
+    const msie = (0, _indexJsDefault.default).navigator && /(msie|trident)/i.test((0, _indexJsDefault.default).navigator.userAgent);
     const urlParsingNode = document.createElement("a");
     let originURL;
     /**
@@ -44190,24 +44193,22 @@ var _trackStreamJs = require("../helpers/trackStream.js");
 var _axiosHeadersJs = require("../core/AxiosHeaders.js");
 var _axiosHeadersJsDefault = parcelHelpers.interopDefault(_axiosHeadersJs);
 var _progressEventReducerJs = require("../helpers/progressEventReducer.js");
-var _progressEventReducerJsDefault = parcelHelpers.interopDefault(_progressEventReducerJs);
 var _resolveConfigJs = require("../helpers/resolveConfig.js");
 var _resolveConfigJsDefault = parcelHelpers.interopDefault(_resolveConfigJs);
 var _settleJs = require("../core/settle.js");
 var _settleJsDefault = parcelHelpers.interopDefault(_settleJs);
-const fetchProgressDecorator = (total, fn)=>{
-    const lengthComputable = total != null;
-    return (loaded)=>setTimeout(()=>fn({
-                lengthComputable,
-                total,
-                loaded
-            }));
-};
 const isFetchSupported = typeof fetch === "function" && typeof Request === "function" && typeof Response === "function";
 const isReadableStreamSupported = isFetchSupported && typeof ReadableStream === "function";
 // used only inside the fetch adapter
 const encodeText = isFetchSupported && (typeof TextEncoder === "function" ? ((encoder)=>(str)=>encoder.encode(str))(new TextEncoder()) : async (str)=>new Uint8Array(await new Response(str).arrayBuffer()));
-const supportsRequestStream = isReadableStreamSupported && (()=>{
+const test = (fn, ...args)=>{
+    try {
+        return !!fn(...args);
+    } catch (e) {
+        return false;
+    }
+};
+const supportsRequestStream = isReadableStreamSupported && test(()=>{
     let duplexAccessed = false;
     const hasContentType = new Request((0, _indexJsDefault.default).origin, {
         body: new ReadableStream(),
@@ -44218,15 +44219,9 @@ const supportsRequestStream = isReadableStreamSupported && (()=>{
         }
     }).headers.has("Content-Type");
     return duplexAccessed && !hasContentType;
-})();
+});
 const DEFAULT_CHUNK_SIZE = 65536;
-const supportsResponseStream = isReadableStreamSupported && !!(()=>{
-    try {
-        return (0, _utilsJsDefault.default).isReadableStream(new Response("").body);
-    } catch (err) {
-    // return undefined
-    }
-})();
+const supportsResponseStream = isReadableStreamSupported && test(()=>(0, _utilsJsDefault.default).isReadableStream(new Response("").body));
 const resolvers = {
     stream: supportsResponseStream && ((res)=>res.body)
 };
@@ -44246,8 +44241,14 @@ isFetchSupported && ((res)=>{
 const getBodyLength = async (body)=>{
     if (body == null) return 0;
     if ((0, _utilsJsDefault.default).isBlob(body)) return body.size;
-    if ((0, _utilsJsDefault.default).isSpecCompliantForm(body)) return (await new Request(body).arrayBuffer()).byteLength;
-    if ((0, _utilsJsDefault.default).isArrayBufferView(body)) return body.byteLength;
+    if ((0, _utilsJsDefault.default).isSpecCompliantForm(body)) {
+        const _request = new Request((0, _indexJsDefault.default).origin, {
+            method: "POST",
+            body
+        });
+        return (await _request.arrayBuffer()).byteLength;
+    }
+    if ((0, _utilsJsDefault.default).isArrayBufferView(body) || (0, _utilsJsDefault.default).isArrayBuffer(body)) return body.byteLength;
     if ((0, _utilsJsDefault.default).isURLSearchParams(body)) body = body + "";
     if ((0, _utilsJsDefault.default).isString(body)) return (await encodeText(body)).byteLength;
 };
@@ -44258,17 +44259,14 @@ const resolveBodyLength = async (headers, body)=>{
 exports.default = isFetchSupported && (async (config)=>{
     let { url, method, data, signal, cancelToken, timeout, onDownloadProgress, onUploadProgress, responseType, headers, withCredentials = "same-origin", fetchOptions } = (0, _resolveConfigJsDefault.default)(config);
     responseType = responseType ? (responseType + "").toLowerCase() : "text";
-    let [composedSignal, stopTimeout] = signal || cancelToken || timeout ? (0, _composeSignalsJsDefault.default)([
+    let composedSignal = (0, _composeSignalsJsDefault.default)([
         signal,
-        cancelToken
-    ], timeout) : [];
-    let finished, request;
-    const onFinish = ()=>{
-        !finished && setTimeout(()=>{
-            composedSignal && composedSignal.unsubscribe();
-        });
-        finished = true;
-    };
+        cancelToken && cancelToken.toAbortSignal()
+    ], timeout);
+    let request;
+    const unsubscribe = composedSignal && composedSignal.unsubscribe && (()=>{
+        composedSignal.unsubscribe();
+    });
     let requestContentLength;
     try {
         if (onUploadProgress && supportsRequestStream && method !== "get" && method !== "head" && (requestContentLength = await resolveBodyLength(headers, data)) !== 0) {
@@ -44279,9 +44277,15 @@ exports.default = isFetchSupported && (async (config)=>{
             });
             let contentTypeHeader;
             if ((0, _utilsJsDefault.default).isFormData(data) && (contentTypeHeader = _request.headers.get("content-type"))) headers.setContentType(contentTypeHeader);
-            if (_request.body) data = (0, _trackStreamJs.trackStream)(_request.body, DEFAULT_CHUNK_SIZE, fetchProgressDecorator(requestContentLength, (0, _progressEventReducerJsDefault.default)(onUploadProgress)), null, encodeText);
+            if (_request.body) {
+                const [onProgress, flush] = (0, _progressEventReducerJs.progressEventDecorator)(requestContentLength, (0, _progressEventReducerJs.progressEventReducer)((0, _progressEventReducerJs.asyncDecorator)(onUploadProgress)));
+                data = (0, _trackStreamJs.trackStream)(_request.body, DEFAULT_CHUNK_SIZE, onProgress, flush);
+            }
         }
-        if (!(0, _utilsJsDefault.default).isString(withCredentials)) withCredentials = withCredentials ? "cors" : "omit";
+        if (!(0, _utilsJsDefault.default).isString(withCredentials)) withCredentials = withCredentials ? "include" : "omit";
+        // Cloudflare Workers throws when credentials are defined
+        // see https://github.com/cloudflare/workerd/issues/902
+        const isCredentialsSupported = "credentials" in Request.prototype;
         request = new Request(url, {
             ...fetchOptions,
             signal: composedSignal,
@@ -44289,11 +44293,11 @@ exports.default = isFetchSupported && (async (config)=>{
             headers: headers.normalize().toJSON(),
             body: data,
             duplex: "half",
-            withCredentials
+            credentials: isCredentialsSupported ? withCredentials : undefined
         });
         let response = await fetch(request);
         const isStreamResponse = supportsResponseStream && (responseType === "stream" || responseType === "response");
-        if (supportsResponseStream && (onDownloadProgress || isStreamResponse)) {
+        if (supportsResponseStream && (onDownloadProgress || isStreamResponse && unsubscribe)) {
             const options = {};
             [
                 "status",
@@ -44303,12 +44307,15 @@ exports.default = isFetchSupported && (async (config)=>{
                 options[prop] = response[prop];
             });
             const responseContentLength = (0, _utilsJsDefault.default).toFiniteNumber(response.headers.get("content-length"));
-            response = new Response((0, _trackStreamJs.trackStream)(response.body, DEFAULT_CHUNK_SIZE, onDownloadProgress && fetchProgressDecorator(responseContentLength, (0, _progressEventReducerJsDefault.default)(onDownloadProgress, true)), isStreamResponse && onFinish, encodeText), options);
+            const [onProgress, flush] = onDownloadProgress && (0, _progressEventReducerJs.progressEventDecorator)(responseContentLength, (0, _progressEventReducerJs.progressEventReducer)((0, _progressEventReducerJs.asyncDecorator)(onDownloadProgress), true)) || [];
+            response = new Response((0, _trackStreamJs.trackStream)(response.body, DEFAULT_CHUNK_SIZE, onProgress, ()=>{
+                flush && flush();
+                unsubscribe && unsubscribe();
+            }), options);
         }
         responseType = responseType || "text";
         let responseData = await resolvers[(0, _utilsJsDefault.default).findKey(resolvers, responseType) || "text"](response, config);
-        !isStreamResponse && onFinish();
-        stopTimeout && stopTimeout();
+        !isStreamResponse && unsubscribe && unsubscribe();
         return await new Promise((resolve, reject)=>{
             (0, _settleJsDefault.default)(resolve, reject, {
                 data: responseData,
@@ -44320,7 +44327,7 @@ exports.default = isFetchSupported && (async (config)=>{
             });
         });
     } catch (err) {
-        onFinish();
+        unsubscribe && unsubscribe();
         if (err && err.name === "TypeError" && /fetch/i.test(err.message)) throw Object.assign(new (0, _axiosErrorJsDefault.default)("Network Error", (0, _axiosErrorJsDefault.default).ERR_NETWORK, config, request), {
             cause: err.cause || err
         });
@@ -44335,44 +44342,44 @@ var _canceledErrorJs = require("../cancel/CanceledError.js");
 var _canceledErrorJsDefault = parcelHelpers.interopDefault(_canceledErrorJs);
 var _axiosErrorJs = require("../core/AxiosError.js");
 var _axiosErrorJsDefault = parcelHelpers.interopDefault(_axiosErrorJs);
+var _utilsJs = require("../utils.js");
+var _utilsJsDefault = parcelHelpers.interopDefault(_utilsJs);
 const composeSignals = (signals, timeout)=>{
-    let controller = new AbortController();
-    let aborted;
-    const onabort = function(cancel) {
-        if (!aborted) {
-            aborted = true;
-            unsubscribe();
-            const err = cancel instanceof Error ? cancel : this.reason;
-            controller.abort(err instanceof (0, _axiosErrorJsDefault.default) ? err : new (0, _canceledErrorJsDefault.default)(err instanceof Error ? err.message : err));
-        }
-    };
-    let timer = timeout && setTimeout(()=>{
-        onabort(new (0, _axiosErrorJsDefault.default)(`timeout ${timeout} of ms exceeded`, (0, _axiosErrorJsDefault.default).ETIMEDOUT));
-    }, timeout);
-    const unsubscribe = ()=>{
-        if (signals) {
-            timer && clearTimeout(timer);
+    const { length } = signals = signals ? signals.filter(Boolean) : [];
+    if (timeout || length) {
+        let controller = new AbortController();
+        let aborted;
+        const onabort = function(reason) {
+            if (!aborted) {
+                aborted = true;
+                unsubscribe();
+                const err = reason instanceof Error ? reason : this.reason;
+                controller.abort(err instanceof (0, _axiosErrorJsDefault.default) ? err : new (0, _canceledErrorJsDefault.default)(err instanceof Error ? err.message : err));
+            }
+        };
+        let timer = timeout && setTimeout(()=>{
             timer = null;
-            signals.forEach((signal)=>{
-                signal && (signal.removeEventListener ? signal.removeEventListener("abort", onabort) : signal.unsubscribe(onabort));
-            });
-            signals = null;
-        }
-    };
-    signals.forEach((signal)=>signal && signal.addEventListener && signal.addEventListener("abort", onabort));
-    const { signal } = controller;
-    signal.unsubscribe = unsubscribe;
-    return [
-        signal,
-        ()=>{
-            timer && clearTimeout(timer);
-            timer = null;
-        }
-    ];
+            onabort(new (0, _axiosErrorJsDefault.default)(`timeout ${timeout} of ms exceeded`, (0, _axiosErrorJsDefault.default).ETIMEDOUT));
+        }, timeout);
+        const unsubscribe = ()=>{
+            if (signals) {
+                timer && clearTimeout(timer);
+                timer = null;
+                signals.forEach((signal)=>{
+                    signal.unsubscribe ? signal.unsubscribe(onabort) : signal.removeEventListener("abort", onabort);
+                });
+                signals = null;
+            }
+        };
+        signals.forEach((signal)=>signal.addEventListener("abort", onabort));
+        const { signal } = controller;
+        signal.unsubscribe = ()=>(0, _utilsJsDefault.default).asap(unsubscribe);
+        return signal;
+    }
 };
 exports.default = composeSignals;
 
-},{"../cancel/CanceledError.js":"9PwCG","../core/AxiosError.js":"3u8Tl","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kIZVF":[function(require,module,exports) {
+},{"../cancel/CanceledError.js":"9PwCG","../core/AxiosError.js":"3u8Tl","../utils.js":"5By4s","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kIZVF":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "streamChunk", ()=>streamChunk);
@@ -44392,27 +44399,57 @@ const streamChunk = function*(chunk, chunkSize) {
         pos = end;
     }
 };
-const readBytes = async function*(iterable, chunkSize, encode) {
-    for await (const chunk of iterable)yield* streamChunk(ArrayBuffer.isView(chunk) ? chunk : await encode(String(chunk)), chunkSize);
+const readBytes = async function*(iterable, chunkSize) {
+    for await (const chunk of readStream(iterable))yield* streamChunk(chunk, chunkSize);
 };
-const trackStream = (stream, chunkSize, onProgress, onFinish, encode)=>{
-    const iterator = readBytes(stream, chunkSize, encode);
+const readStream = async function*(stream) {
+    if (stream[Symbol.asyncIterator]) {
+        yield* stream;
+        return;
+    }
+    const reader = stream.getReader();
+    try {
+        for(;;){
+            const { done, value } = await reader.read();
+            if (done) break;
+            yield value;
+        }
+    } finally{
+        await reader.cancel();
+    }
+};
+const trackStream = (stream, chunkSize, onProgress, onFinish)=>{
+    const iterator = readBytes(stream, chunkSize);
     let bytes = 0;
+    let done;
+    let _onFinish = (e)=>{
+        if (!done) {
+            done = true;
+            onFinish && onFinish(e);
+        }
+    };
     return new ReadableStream({
-        type: "bytes",
         async pull (controller) {
-            const { done, value } = await iterator.next();
-            if (done) {
-                controller.close();
-                onFinish();
-                return;
+            try {
+                const { done, value } = await iterator.next();
+                if (done) {
+                    _onFinish();
+                    controller.close();
+                    return;
+                }
+                let len = value.byteLength;
+                if (onProgress) {
+                    let loadedBytes = bytes += len;
+                    onProgress(loadedBytes);
+                }
+                controller.enqueue(new Uint8Array(value));
+            } catch (err) {
+                _onFinish(err);
+                throw err;
             }
-            let len = value.byteLength;
-            onProgress && onProgress(bytes += len);
-            controller.enqueue(new Uint8Array(value));
         },
         cancel (reason) {
-            onFinish(reason);
+            _onFinish(reason);
             return iterator.return();
         }
     }, {
@@ -44498,7 +44535,7 @@ exports.default = {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "VERSION", ()=>VERSION);
-const VERSION = "1.7.2";
+const VERSION = "1.7.7";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"45wzn":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -44570,6 +44607,15 @@ var _canceledErrorJsDefault = parcelHelpers.interopDefault(_canceledErrorJs);
         if (!this._listeners) return;
         const index = this._listeners.indexOf(listener);
         if (index !== -1) this._listeners.splice(index, 1);
+    }
+    toAbortSignal() {
+        const controller = new AbortController();
+        const abort = (err)=>{
+            controller.abort(err);
+        };
+        this.subscribe(abort);
+        controller.signal.unsubscribe = ()=>this.unsubscribe(abort);
+        return controller.signal;
     }
     /**
    * Returns an object that contains a new `CancelToken` and a function that, when called,
@@ -44682,37 +44728,137 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
 });
 exports.default = HttpStatusCode;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"Eij1b":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$db4a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aA2F2":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$562a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$db4a.prelude(module);
+$parcel$ReactRefreshHelpers$562a.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const HomePage = ()=>{
+var _react = require("react");
+var _reactRedux = require("react-redux");
+var _authSlice = require("../slices/AuthSlice");
+var _form = require("../components/Form/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const LoginPage = ()=>{
+    _s();
+    const [userInfo, setUserInfo] = (0, _react.useState)();
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const { user } = (0, _reactRedux.useSelector)((state)=>state.auth);
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    const onHandleChanged = (event)=>{
+        setUserInfo({
+            ...userInfo,
+            [event.target.name]: event.target.value
+        });
+    };
+    const onHandleSubmitted = (event)=>{
+        event.preventDefault();
+        dispatch((0, _authSlice.login)(userInfo));
+    };
+    (0, _react.useEffect)(()=>{
+        localStorage.getItem("token") && navigate("/admin");
+    }, [
+        user
+    ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            children: "Ana sayfa"
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+            onChange: onHandleChanged,
+            onSubmit: onHandleSubmitted
         }, void 0, false, {
-            fileName: "frontend/src/pages/HomePage.js",
+            fileName: "frontend/src/pages/LoginPage.js",
+            lineNumber: 29,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "frontend/src/pages/LoginPage.js",
+        lineNumber: 28,
+        columnNumber: 5
+    }, undefined);
+};
+_s(LoginPage, "xcfCOexfvCNtJ+eg0TZv+rQQNw4=", false, function() {
+    return [
+        (0, _reactRedux.useDispatch),
+        (0, _reactRedux.useSelector),
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
+_c = LoginPage;
+exports.default = LoginPage;
+var _c;
+$RefreshReg$(_c, "LoginPage");
+
+  $parcel$ReactRefreshHelpers$562a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"62sf7","../slices/AuthSlice":"bKENh","../components/Form/Form":"jbmyq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jbmyq":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8e09 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8e09.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Form = ({ onChange, onSubmit })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+            onSubmit: (e)=>onSubmit(e),
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    name: "email",
+                    id: "email",
+                    type: "email",
+                    onChange: (e)=>onChange(e)
+                }, void 0, false, {
+                    fileName: "frontend/src/components/Form/Form.js",
+                    lineNumber: 5,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    name: "password",
+                    id: "password",
+                    type: "password",
+                    onChange: (e)=>onChange(e)
+                }, void 0, false, {
+                    fileName: "frontend/src/components/Form/Form.js",
+                    lineNumber: 11,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    type: "submit",
+                    value: "G\xf6nder"
+                }, void 0, false, {
+                    fileName: "frontend/src/components/Form/Form.js",
+                    lineNumber: 17,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "frontend/src/components/Form/Form.js",
             lineNumber: 4,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
-        fileName: "frontend/src/pages/HomePage.js",
+        fileName: "frontend/src/components/Form/Form.js",
         lineNumber: 3,
         columnNumber: 5
     }, undefined);
 };
-_c = HomePage;
-exports.default = HomePage;
+_c = Form;
+exports.default = Form;
 var _c;
-$RefreshReg$(_c, "HomePage");
+$RefreshReg$(_c, "Form");
 
-  $parcel$ReactRefreshHelpers$db4a.postlude(module);
+  $parcel$ReactRefreshHelpers$8e09.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
@@ -44727,18 +44873,29 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
 const DashboardPage = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            children: "Panel"
-        }, void 0, false, {
-            fileName: "frontend/src/pages/admin/DashBoardPage.js",
-            lineNumber: 4,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Panel"
+            }, void 0, false, {
+                fileName: "frontend/src/pages/admin/DashBoardPage.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: "/admin/dashboard",
+                children: "sss"
+            }, void 0, false, {
+                fileName: "frontend/src/pages/admin/DashBoardPage.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "frontend/src/pages/admin/DashBoardPage.js",
-        lineNumber: 3,
+        lineNumber: 5,
         columnNumber: 5
     }, undefined);
 };
@@ -44752,60 +44909,7 @@ $RefreshReg$(_c, "DashboardPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3cUkV":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bc71 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bc71.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactRedux = require("react-redux");
-var _reactRouterDom = require("react-router-dom");
-var _authSlice = require("../slices/AuthSlice");
-var _s = $RefreshSig$();
-const ProtectedRoute = ({ children })=>{
-    _s();
-    const { error } = (0, _reactRedux.useSelector)((state)=>state.auth);
-    const dispatch = (0, _reactRedux.useDispatch)();
-    const navigate = (0, _reactRouterDom.useNavigate)();
-    (0, _react.useEffect)(()=>{
-        !localStorage.getItem("token") && navigate("/login");
-        dispatch((0, _authSlice.verifyToken)());
-    }, [
-        dispatch,
-        navigate
-    ]);
-    if (error) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
-        to: "/login"
-    }, void 0, false, {
-        fileName: "frontend/src/layouts/ProtectedRoute.js",
-        lineNumber: 16,
-        columnNumber: 21
-    }, undefined);
-    return children;
-};
-_s(ProtectedRoute, "c5BjylWxyjefsu9KdMTxlBcugvM=", false, function() {
-    return [
-        (0, _reactRedux.useSelector),
-        (0, _reactRedux.useDispatch),
-        (0, _reactRouterDom.useNavigate)
-    ];
-});
-_c = ProtectedRoute;
-exports.default = ProtectedRoute;
-var _c;
-$RefreshReg$(_c, "ProtectedRoute");
-
-  $parcel$ReactRefreshHelpers$bc71.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react-redux":"62sf7","react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../slices/AuthSlice":"bKENh","react/jsx-dev-runtime":"iTorj"}],"6uTLr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6uTLr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "store", ()=>store);
@@ -44818,6 +44922,6 @@ const store = (0, _toolkit.configureStore)({
     }
 });
 
-},{"@reduxjs/toolkit":"fuua8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../slices/AuthSlice":"bKENh"}]},["034v5","1xC6H","joZUE"], "joZUE", "parcelRequire716c")
+},{"@reduxjs/toolkit":"fuua8","../slices/AuthSlice":"bKENh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["034v5","1xC6H","joZUE"], "joZUE", "parcelRequire716c")
 
 //# sourceMappingURL=index.f0b3ebae.js.map

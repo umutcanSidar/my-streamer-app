@@ -3,10 +3,10 @@ import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import AdminLayout from "../layouts/AdminLayout";
 // pages
-// import LoginPage from "../pages/LoginPage";
+import LoginPage from "../pages/LoginPage";
 import HomePage from "../pages/HomePage";
 // pages -> Admin
-// import DashBoardPage from "../pages/admin/DashBoardPage";
+import DashBoardPage from "../pages/admin/DashBoardPage";
 import ProtectedRoute from "../layouts/ProtectedRoute";
 
 export const router = createBrowserRouter([

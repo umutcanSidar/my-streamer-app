@@ -4,7 +4,7 @@
   "description": "",
   "proxy": "http://localhost:4000/",
   "scripts": {
-    "dev-client": "parcel",
+    "dev-client": "parcel -p 80",
     "dev-server": "nodemon backend/server.js",
     "start": "node backend/server.js",
     "build": "parcel build"
