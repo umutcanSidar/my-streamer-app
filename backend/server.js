@@ -30,21 +30,5 @@ app.get("*", (req, res) => {
 });
 
 const server = http.createServer(app);
-const io = socket(server);
-
-io.on("connection", (socket) => {
-  console.log("A user connected");
-  // Mesaj alma
-  socket.on("message", (msg) => {
-    console.log("Message received:", msg);
-    // Mesajı tüm kullanıcılara gönderme
-    io.emit("message", msg);
-  });
-
-  // Kullanıcı bağlantısı koptuğunda
-  socket.on("disconnect", () => {
-    console.log("A user disconnected");
-  });
-});
 
 app.listen(port, () => console.log("The server has been started!"));
