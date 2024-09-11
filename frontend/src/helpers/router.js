@@ -6,7 +6,7 @@ import AdminLayout from "../layouts/AdminLayout";
 import LoginPage from "../pages/LoginPage";
 import HomePage from "../pages/HomePage";
 // pages -> Admin
-import DashBoardPage from "../pages/admin/DashBoardPage";
+// import DashBoardPage from "../pages/admin/DashBoardPage";
 import ProtectedRoute from "../layouts/ProtectedRoute";
 
 export const router = createBrowserRouter([
@@ -34,10 +34,6 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <DashBoardPage />,
-      },
-      {
-        path: "dashboard",
         element: <DashBoardPage />,
       },
     ],
